@@ -3,11 +3,13 @@ import random
 
 import discord
 from discord.ext.commands import Bot, context
+import discord.ext.commands
 from discord.member import Member
 from discord.message import Message
 
 from config import settings
 from constants import constant
+import discord.ext
 
 intents = discord.Intents.all()
 
@@ -31,9 +33,9 @@ async def random_meme(ctx: context.Context):
     await ctx.send(response)
 
 
-@bot.command(name="roll_dice", help="Бросок кубика. Первый параметр: количество бросков, второй параметр: количество сторон (стандартное, 4/6/8/10/12/20)")
-async def roll(ctx: context.Context, number_of_dice: int, number_of_sides: int):
-    number_of_dice_ceiled = min(number_of_dice, 2)  # limit number of dices?
+@bot.command(name="roll_dice", help="Бросок кубика (стандартное значение: один D6)")
+async def roll(ctx: context.Context, number_of_dice: int = discord.ext.commands.parameter(default = 1, description = "Количество бросков"), number_of_sides: int = discord.ext.commands.parameter(default = 6, description= "Количество сторон")):
+    number_of_dice_ceiled = min(number_of_dice, 5)  # limit number of dices?
     dices = [
         str(random.choice(range(1, number_of_sides + 1)))
         for _ in range(number_of_dice_ceiled)
@@ -51,15 +53,15 @@ async def on_member_join(member: Member):  # Auto-responding to member joining (
     await member.dm_channel.send(f"Привет {member.name}, как дела?")
 
 
-@bot.event
-async def on_message(message: Message):  # Автоматический ответ на сообщение, в котором фигурирует ну или давай
-    if message.author == client.user:
-        return
+# @bot.event
+# async def on_message(message: Message):  # Автоматический ответ на сообщение, в котором фигурирует ну или давай
+#     if message.author == bot.user:
+#         return
 
-    if "ну" or "давай" in message.content:
-        response = random.choice(constant.BROOKLYN_99_QUOTES)
-        await message.channel.send(response)
-    return
+#     if message.content == "ну":
+#         response = random.choice(constant.BROOKLYN_99_QUOTES)
+#         await message.channel.send(response)
+#     return
 
 
 # @client.event

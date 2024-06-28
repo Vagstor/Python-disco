@@ -11,7 +11,14 @@ class Constants:
         "https://img-9gag-fun.9cache.com/photo/aKEbMV6_460s.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK0UM9knHc4k0O2Axj6uAwyXwsW1aPFc5UFA&s",
         "https://coub.com/view/33mrts",
-        "https://preview.redd.it/mp8apuob1a1c1.jpg?width=640&crop=smart&auto=webp&s=774cb08150097c6601dbae483a98a44f5c778aff"
+        "https://preview.redd.it/mp8apuob1a1c1.jpg?width=640&crop=smart&auto=webp&s=774cb08150097c6601dbae483a98a44f5c778aff",
+        "https://cs12.pikabu.ru/post_img/2022/07/22/7/1658486014176774418.jpg",
+        "https://64.media.tumblr.com/c363b57a1690e1f24cc83d13c094848f/5ee4af02fc94df6f-64/s2048x3072/75c7e1fcc1bcacf2fc47fc35d4f569d9eedfd10e.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpOgVq8eDRgsICEXBg6cz-TwP6RIqDSg3YiQ&s",
+        "https://sun9-23.userapi.com/impg/hau1rGeXQ6fBWfRlKwRMqnTK5WtwLmkKaNmugA/YtTYKf0CNIc.jpg?size=604x442&quality=96&sign=8d70ca7a5e9071e280c55de3d322dca8&c_uniq_tag=WoqzgfuUz7XHEV1g81o_GO_12zxfTIqR3gu81VD2Pv8&type=album",
+        "https://i.pinimg.com/736x/e9/9e/9a/e99e9a48b73cb219850137ebb49fea42.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjwTlWudYEneaWLl53Qg6RRcWHA7GbOUlmEg&s",
+        "https://i.pinimg.com/originals/79/55/9c/79559cab9727d65a7c7422d2518d7401.jpg"
     ]
 
     RANDOM_DISCO_QUOTES = [
