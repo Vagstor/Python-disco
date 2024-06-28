@@ -1,6 +1,20 @@
 class Constants:
+    RANDOM_DISCO_MEMES = [
+        "https://i.pinimg.com/736x/11/9c/0f/119c0f4a80bffe7922302d465f293636.jpg",
+        "https://medialeaks.ru/wp-content/uploads/2021/09/photo_2021-09-29_15-21-57-600x418.jpg",
+        "https://memepedia.ru/wp-content/uploads/2023/02/memy-pro-garri-djubua-4.jpg",
+        "https://i.pinimg.com/736x/77/21/f5/7721f51d08f8ccfa80deddb9f8708177.jpg",
+        "https://preview.redd.it/r7bjp9zpqexb1.jpg?width=640&crop=smart&auto=webp&s=ec6770ba378f8aa69783b96585940892fa1d86c0",
+        "https://img-9gag-fun.9cache.com/photo/ae9NRNQ_460s.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWo5OZZIGPMyzVdqmsbDA0eub17y9840kosQ&s",
+        "https://i.playground.ru/e/MOyYV2Mfgt7I3ezjZjjwIA.jpeg?1200x900",
+        "https://img-9gag-fun.9cache.com/photo/aKEbMV6_460s.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK0UM9knHc4k0O2Axj6uAwyXwsW1aPFc5UFA&s",
+        "https://coub.com/view/33mrts",
+        "https://preview.redd.it/mp8apuob1a1c1.jpg?width=640&crop=smart&auto=webp&s=774cb08150097c6601dbae483a98a44f5c778aff"
+    ]
 
-    DISCO_QUOTES = [
+    RANDOM_DISCO_QUOTES = [
         "А не пойти ли тебе нахер прямо сейчас, а?",
         "Я не *просто* расист. Слушай, я читал *книги*.",
         "Если бы вы знали как Куно похуй, вы бы расплакались.",

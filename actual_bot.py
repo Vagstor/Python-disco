@@ -20,13 +20,18 @@ async def on_ready():  # Checking for connection
     print(f"{bot.user.name} has connected to Discord!")
 
 
-@bot.command(name="disco", help="Цитаты из Disco Elysium")
+@bot.command(name="random_quote", help="Случайные цитаты из Disco Elysium")
 async def random_quote(ctx: context.Context):
-    response = random.choice(constant.DISCO_QUOTES)
+    response = random.choice(constant.RANDOM_DISCO_QUOTES)
+    await ctx.send(response)
+
+@bot.command(name="random_meme", help="Случайный мем по Disco Elysium")
+async def random_meme(ctx: context.Context):
+    response = random.choice(constant.RANDOM_DISCO_MEMES)
     await ctx.send(response)
 
 
-@bot.command(name="roll_dice", help="Бросок кубика")
+@bot.command(name="roll_dice", help="Бросок кубика. Первый параметр: количество бросков, второй параметр: количество сторон (стандартное, 4/6/8/10/12/20)")
 async def roll(ctx: context.Context, number_of_dice: int, number_of_sides: int):
     number_of_dice_ceiled = min(number_of_dice, 2)  # limit number of dices?
     dices = [
@@ -40,18 +45,18 @@ async def roll(ctx: context.Context, number_of_dice: int, number_of_sides: int):
     await ctx.send(", ".join(dices))
 
 
-@client.event
+@bot.event
 async def on_member_join(member: Member):  # Auto-responding to member joining (DM)
     await member.create_dm()
-    await member.dm_channel.send(f"привет {member.name}, как дела?")
+    await member.dm_channel.send(f"Привет {member.name}, как дела?")
 
 
-@client.event
-async def on_message(message: Message):  # Auto-responding to member writing anything
+@bot.event
+async def on_message(message: Message):  # Автоматический ответ на сообщение, в котором фигурирует ну или давай
     if message.author == client.user:
         return
 
-    if message.content:
+    if "ну" or "давай" in message.content:
         response = random.choice(constant.BROOKLYN_99_QUOTES)
         await message.channel.send(response)
     return
