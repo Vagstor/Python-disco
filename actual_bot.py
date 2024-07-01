@@ -27,6 +27,7 @@ async def random_quote(ctx: context.Context):
     response = random.choice(constant.RANDOM_DISCO_QUOTES)
     await ctx.send(response)
 
+
 @bot.command(name="random_meme", help="Случайный мем по Disco Elysium")
 async def random_meme(ctx: context.Context):
     response = random.choice(constant.RANDOM_DISCO_MEMES)
@@ -34,7 +35,15 @@ async def random_meme(ctx: context.Context):
 
 
 @bot.command(name="roll_dice", help="Бросок кубика (стандартное значение: один D6)")
-async def roll(ctx: context.Context, number_of_dice: int = discord.ext.commands.parameter(default = 1, description = "Количество бросков"), number_of_sides: int = discord.ext.commands.parameter(default = 6, description= "Количество сторон")):
+async def roll(
+    ctx: context.Context,
+    number_of_dice: int = discord.ext.commands.parameter(
+        default=1, description="Количество бросков"
+    ),
+    number_of_sides: int = discord.ext.commands.parameter(
+        default=6, description="Количество сторон"
+    )
+):
     number_of_dice_ceiled = min(number_of_dice, 5)  # limit number of dices?
     dices = [
         str(random.choice(range(1, number_of_sides + 1)))
@@ -75,13 +84,13 @@ async def on_member_join(member: Member):  # Auto-responding to member joining (
 #         raise discord.DiscordException
 
 
-@client.event
-async def on_error(event, *args, **kwargs):  # Handling exceptions related to messages
-    with open("err.log", "a") as f:
-        if event == "on_message":
-            f.write(f"Unhandled message: {args[0]}\n")
-        else:
-            raise
+# @client.event
+# async def on_error(event, *args, **kwargs):  # Handling exceptions related to messages
+#     with open("err.log", "a") as f:
+#         if event == "on_message":
+#             f.write(f"Unhandled message: {args[0]}\n")
+#         else:
+#             raise
 
 
 bot.run(settings.TOKEN)
