@@ -1,3 +1,4 @@
+.env
 .disco-venv
 *.log
 __pycache__
